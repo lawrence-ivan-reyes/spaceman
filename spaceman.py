@@ -13,7 +13,7 @@ def is_word_guessed(secret_word, letters_guessed):
     for letter in secret_word:
         if letter not in letters_guessed:
             return False
-        return True
+    return True
 
 def get_guessed_word(secret_word, letters_guessed):
     guessed_word = ""
@@ -22,11 +22,10 @@ def get_guessed_word(secret_word, letters_guessed):
             guessed_word += letter
         else:
             guessed_word += "_"
-        return guessed_word
+    return guessed_word
 
 def is_guess_in_word(guess, secret_word):
     return guess in secret_word
-
 
 def spaceman(secret_word):
     print("Welcome to Spaceman!")
@@ -59,10 +58,10 @@ def spaceman(secret_word):
             guesses_left -= 1
 
         if is_word_guessed(secret_word, letters_guessed):
-            print("Yay! You guessed the word: " + secret_word)
+            print("Yay! You guessed the secret word: " + secret_word)
             break
-        else:
-            print("Sorry, you lost. The secret word was: " + secret_word)
+    else:
+        print("Sorry, you lost. The secret word was: " + secret_word)
 
 #These function calls that will start the game
 secret_word = load_word()
