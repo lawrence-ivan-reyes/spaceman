@@ -29,13 +29,9 @@ def is_guess_in_word(guess, secret_word):
 
 
 def spaceman(secret_word):
-    '''
-    A function that controls the game of spaceman. Will start spaceman in the command line.
-
-    Args:
-      secret_word (string): the secret word to guess.
-
-    '''
+    print("Welcome to Spaceman!")
+    print("To play, guess the secret word one letter at a time.\nYou have 7 chances, and for each incorrect guess, a part of the spaceman will be drawn.")
+    print(f"\nThe secret word has {len(secret_word)} letters. Good luck and have fun!\n")
 
 
     #TODO: show the player information about the game according to the project spec
