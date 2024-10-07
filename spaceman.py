@@ -36,25 +36,25 @@ def spaceman(secret_word):
     guesses_left = 7
 
     while guesses_left > 0:
-        print("\nCurrent guess: " + get_guessed_word(secret_word, letters_guessed))
+        print("Current guess: " + get_guessed_word(secret_word, letters_guessed))
         print(f"You have {guesses_left} guesses left!")
 
         guess = input("Please guess one letter: ").lower()
 
         if len(guess) != 1 or not guess.isalpha():
-            print("Invalid. Please guess a single letter!")
+            print("\nInvalid. Please guess a single letter!")
             continue
 
         if guess in letters_guessed:
-            print("Uh-oh. You already guessed that letter!")
+            print("\nUh-oh. You already guessed that letter!")
             continue
 
         letters_guessed.append(guess)
 
         if is_guess_in_word(guess, secret_word):
-            print("Good guess!")
+            print("\nGood guess!")
         else:
-            print("Incorrect guess!")
+            print("\nIncorrect guess!")
             guesses_left -= 1
 
         if is_word_guessed(secret_word, letters_guessed):
