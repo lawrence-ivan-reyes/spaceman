@@ -36,19 +36,18 @@ def spaceman():
     while True: # stretch challenge: loop to keep playing if the user chooses 'yes' to playing again at the end
         secret_word = load_word() # now the secret word is loaded here after adding the above stretch challenge
         print("Welcome to Spaceman!")
-        print("To play, guess the secret word one letter at a time.\nYou have 7 chances, and for each incorrect guess, a part of the spaceman will be drawn.")
+        print("To play, guess the secret word one letter at a time.\nFor each incorrect guess, a part of the spaceman will be drawn.")
         print(f"\nThe secret word has {len(secret_word)} letters. Good luck and have fun!\n")
 
         letters_guessed = [] # initializing a list in order to store the letters that have been guessed
-        guesses_left = len(secret_word) # stretch challenge: instead of hardcoding this to 7, set it to equal the length of the word
-
         incorrect_guesses = 0 # stretch challenge: initializing this new variable to 0 to satisfy the spaceman ascii art
+        max_incorrect_guesses = len(secret_word) # stretch challenge: initializing this variable to help with the ascii art challenge
 
         # this loop will continue until guesses run out OR until the word has been correctly guessed 
-        while guesses_left > 0:
+        while incorrect_guesses < max_incorrect_guesses: # to account for the ascii art stretch challenge
             draw_spaceman(incorrect_guesses) # stretch challenge: draw spaceman based on incorrect guesses
             print("Current guess: " + get_guessed_word(secret_word, letters_guessed))
-            print(f"You have {guesses_left} guesses left!")
+            print(f"You have {max_incorrect_guesses - incorrect_guesses} guesses left!") 
 
             guess = input("\nPlease guess one letter: ").lower()
 
@@ -66,8 +65,7 @@ def spaceman():
                 print("\nGood guess.")
             else:
                 print("\nIncorrect guess.")
-                incorrect_guesses -= 1 # stretch challenge: incremenent incorrect guesses to draw the spaceman ascii art
-                guesses_left -= 1
+                incorrect_guesses += 1 # stretch challenge: incremenent incorrect guesses to draw the spaceman ascii art
 
             if is_word_guessed(secret_word, letters_guessed):
                 print("\nYay! You guessed the secret word: " + secret_word) 
