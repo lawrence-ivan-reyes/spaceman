@@ -12,18 +12,18 @@ def load_word():
 # function to check if the word has been FULLY guessed
 def is_word_guessed(secret_word, letters_guessed):
     for letter in secret_word:
-        if letter not in letters_guessed: # if any letter of the secret word hasn't been guessed, return False
+        if letter not in letters_guessed: 
             return False
-    return True # if all letters are guessed, return True
+    return True 
 
 # function to display the CURRENT state of the guessed word
 def get_guessed_word(secret_word, letters_guessed):
     guessed_word = ""
     for letter in secret_word: # for every letter in the secret word, check if it's been guessed
         if letter in letters_guessed:
-            guessed_word += letter # if guessed, add the letter to the guessed word string
+            guessed_word += letter 
         else:
-            guessed_word += "_" # if not guessed, show an underscore instead
+            guessed_word += "_" 
     return guessed_word
 
 # function to check if the guesser letter is in the secret word
@@ -46,9 +46,9 @@ def spaceman(secret_word):
 
         guess = input("\nPlease guess one letter: ").lower()
 
-        if len(guess) != 1 or not guess.isalpha(): # this is ensuring a valid input of a SINGLE alphabetic character 
+        if len(guess) != 1 or not guess.isalpha(): # stretch challenge: this is ensuring a valid input of a SINGLE alphabetic character 
             print("\nInvalid. Please guess a single letter!")
-            continue 
+            continue # stretch challenge: goes back to beginning of loop to allow user to enter another guess without reducing guess count
 
         if guess in letters_guessed:
             print("\nUh-oh. You already guessed that letter!")
