@@ -40,7 +40,7 @@ def spaceman():
         print(f"\nThe secret word has {len(secret_word)} letters. Good luck and have fun!\n")
 
         letters_guessed = [] # initializing a list in order to store the letters that have been guessed
-        incorrect_guesses = 0 # stretch challenge: initializing this new variable to 0 to satisfy the spaceman ascii art
+        incorrect_guesses = -0 # stretch challenge: initializing this new variable to 0 to satisfy the spaceman ascii art
         max_incorrect_guesses = len(secret_word) # stretch challenge: initializing this variable to help with the ascii art challenge
 
         # this loop will continue until guesses run out OR until the word has been correctly guessed 
