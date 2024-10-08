@@ -31,8 +31,9 @@ def is_guess_in_word(guess, secret_word):
     return guess in secret_word
 
 # main game function
-def spaceman(secret_word):
+def spaceman():
     while True: # stretch challenge: loop to keep playing if the user chooses 'yes' to playing again at the end
+        secret_word = load_word() # now the secret word is loaded here after adding the above stretch challenge
         print("Welcome to Spaceman!")
         print("To play, guess the secret word one letter at a time.\nYou have 7 chances, and for each incorrect guess, a part of the spaceman will be drawn.")
         print(f"\nThe secret word has {len(secret_word)} letters. Good luck and have fun!\n")
