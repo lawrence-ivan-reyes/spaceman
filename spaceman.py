@@ -39,7 +39,7 @@ def spaceman():
         print(f"\nThe secret word has {len(secret_word)} letters. Good luck and have fun!\n")
 
         letters_guessed = [] # initializing a list in order to store the letters that have been guessed
-        guesses_left = 7 # player starts with 7 guesses
+        guesses_left = len(secret_word) # stretch challenge: instead of hardcoding this to 7, set it to equal the length of the word
 
         # this loop will continue until guesses run out OR until the word has been correctly guessed 
         while guesses_left > 0:
