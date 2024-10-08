@@ -57,16 +57,16 @@ def spaceman(secret_word):
         letters_guessed.append(guess)
 
         if is_guess_in_word(guess, secret_word):
-            print("\nGood guess!")
+            print("\nGood guess.")
         else:
             print("\nIncorrect guess.")
             guesses_left -= 1
 
         if is_word_guessed(secret_word, letters_guessed):
-            print("Yay! You guessed the secret word: " + secret_word)
+            print("\nYay! You guessed the secret word: " + secret_word)
             break # game ends here if the word has been guessed
     else:
-        print("Sorry, you lost. The secret word was: " + secret_word) # only happens if the player runs out of guesses
+        print("\nSorry, you lost. The secret word was: " + secret_word) # only happens if the player runs out of guesses
 
 secret_word = load_word()
 spaceman(secret_word)
