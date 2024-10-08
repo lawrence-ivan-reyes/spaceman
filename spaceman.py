@@ -1,4 +1,5 @@
 import random
+from ascii_art import draw_spaceman
 
 def load_word():
     f = open('words.txt', 'r')
@@ -41,8 +42,11 @@ def spaceman():
         letters_guessed = [] # initializing a list in order to store the letters that have been guessed
         guesses_left = len(secret_word) # stretch challenge: instead of hardcoding this to 7, set it to equal the length of the word
 
+        incorrect_guesses = 0 # stretch challenge: initializing this new variable to 0 to satisfy the spaceman ascii art
+
         # this loop will continue until guesses run out OR until the word has been correctly guessed 
         while guesses_left > 0:
+            draw_spaceman(incorrect_guesses) # stretch challenge: draw spaceman based on incorrect guesses
             print("Current guess: " + get_guessed_word(secret_word, letters_guessed))
             print(f"You have {guesses_left} guesses left!")
 
@@ -62,13 +66,15 @@ def spaceman():
                 print("\nGood guess.")
             else:
                 print("\nIncorrect guess.")
+                incorrect_guesses -= 1 # stretch challenge: incremenent incorrect guesses to draw the spaceman ascii art
                 guesses_left -= 1
 
             if is_word_guessed(secret_word, letters_guessed):
-                print("\nYay! You guessed the secret word: " + secret_word)
+                print("\nYay! You guessed the secret word: " + secret_word) 
                 break # game ends here if the word has been guessed
         else:
-            print("\nSorry, you lost. The secret word was: " + secret_word) # only happens if the player runs out of guesses
+            draw_spaceman(incorrect_guesses) # stretch challenge: draw spaceman when user loses game
+            print("\nSorry, you lost. The secret word was: " + secret_word) # stretch challenge: shows user secret word when they lose
 
         # stretch challenge: asking user if they want to play again after the game ends
         play_again = input("\nThanks for playing. Would you like to play again? (yes/no): ").lower()
