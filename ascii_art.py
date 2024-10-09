@@ -1,3 +1,5 @@
+# apologies - i could not find any spaceman ascii art that was simple to use so opted for a simple stick man!
+
 def draw_spaceman(incorrect_guesses):
     stages = [  
         '''

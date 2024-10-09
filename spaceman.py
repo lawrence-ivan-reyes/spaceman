@@ -74,7 +74,7 @@ def spaceman():
         # stretch challenge: asking user if they want to play again after the game ends
         play_again = input("\nWould you like to play again? (yes/no): ").lower()
         if play_again != 'yes':
-            print("Thanks for playing! See you next time.")
+            print("\nThanks for playing! See you next time.")
             break
 
 # start game
